@@ -31,4 +31,4 @@ final pageNameProvider = StateProvider<String?>((ref) {
   }
 });
 
-final userCompleteIntroductionProvider = StateProvider((ref) => false);
+final userCompleteIntroductionProvider = StateProvider((ref) => true);
