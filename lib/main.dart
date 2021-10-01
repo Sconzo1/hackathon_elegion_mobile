@@ -40,33 +40,41 @@ class MyNavigation extends ConsumerWidget {
 
     Widget? _getBody() {
       switch (bottomNavIndex.state) {
-        case TESTS_PAGE : {
-          return TestsPage();
-        }
-        case CHAT_PAGE : {
-          return ChatPage();
-        }
-        case GUIDES_PAGE : {
-          return GuidesPage();
-        }
-        case PROFILE_PAGE : {
-          return ProfilePage();
-        }
-        case TODO_PAGE : {
-          return TodoPage();
-        }
+        case TESTS_PAGE :
+          {
+            return TestsPage();
+          }
+        case CHAT_PAGE :
+          {
+            return ChatPage();
+          }
+        case GUIDES_PAGE :
+          {
+            return GuidesPage();
+          }
+        case PROFILE_PAGE :
+          {
+            return ProfilePage();
+          }
+        case TODO_PAGE :
+          {
+            return TodoPage();
+          }
       }
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('${appBarName.state}'),
-      ),
-      body: _getBody(),
-      floatingActionButton: MyFloatingActionButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: MyNavigationBar(),
-    );
+    if (bottomNavIndex.state == INTRODUCTION_PAGE)
+      return IntroductionPage();
+    else
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('${appBarName.state}'),
+        ),
+        body: _getBody(),
+        floatingActionButton: MyFloatingActionButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: MyNavigationBar(),
+      );
   }
 }
 
