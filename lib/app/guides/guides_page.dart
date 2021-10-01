@@ -1,6 +1,6 @@
+import 'package:e_legion_hackaton/app/guides/widgets/guide_chapter.dart';
+import 'package:e_legion_hackaton/app/guides/widgets/guides_filter_chips.dart';
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
-import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
-import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,11 +11,14 @@ class GuidesPage extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final userName = watch(userNameProvider);
 
+    var children = [];
+
     return SafeArea(
-      child: Container(
-        child: Center(
-          child: Text('Привет, это гайды'),
-        ),
+      child: Column(
+        children: [
+          GuideFilters(),
+          Expanded(child: GuideChapter(title: "Программирование", chapters: ["Выявить требования", "Добавить диаграмму ВИ"]))
+        ],
       ),
     );
   }
