@@ -50,9 +50,14 @@ class MyNavigationBar extends ConsumerWidget {
           ],
         );
       },
+      leftCornerRadius: 10,
+      rightCornerRadius: 10,
+      splashColor: Colors.blue[50],
+      splashRadius: 30,
+      splashSpeedInMilliseconds: 250,
       activeIndex: bottomNavIndex.state,
       gapLocation: GapLocation.center,
-      notchSmoothness: NotchSmoothness.defaultEdge,
+      notchSmoothness: NotchSmoothness.sharpEdge,
       onTap: (index) {
         bottomNavIndex.state = index;
       },

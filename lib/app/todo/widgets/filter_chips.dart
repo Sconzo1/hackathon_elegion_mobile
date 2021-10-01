@@ -16,53 +16,47 @@ class Filters extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0),
-          child: FilterChip(
-            selected: firstFilter.state,
-            backgroundColor: Colors.red[50],
-            selectedColor: Colors.red[100],
-            checkmarkColor: Colors.red,
-            label: Text(
-              'Срочно',
-              style: TextStyle(fontSize: 16, color: Colors.red[900]),
-            ),
-            onSelected: (bool value) {
-              firstFilter.state = value;
-            },
+        FilterChip(
+          selected: firstFilter.state,
+          backgroundColor: Colors.red[50],
+          selectedColor: Colors.red[100],
+          checkmarkColor: Colors.red,
+          shape: StadiumBorder(side: BorderSide(color: Colors.red[700]!)),
+          label: Text(
+            'Срочно',
+            style: TextStyle(fontSize: 16, color: Colors.red[900]),
           ),
+          onSelected: (bool value) {
+            firstFilter.state = value;
+          },
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0),
-          child: FilterChip(
-            selected: secondFilter.state,
-            backgroundColor: Colors.yellow[50],
-            selectedColor: Colors.yellow[100],
-            checkmarkColor: Colors.yellow,
-            label: Text(
-              'Поторопись',
-              style: TextStyle(fontSize: 16, color: Colors.yellow[900]),
-            ),
-            onSelected: (bool value) {
-              secondFilter.state = value;
-            },
+        FilterChip(
+          selected: secondFilter.state,
+          backgroundColor: Colors.yellow[50],
+          selectedColor: Colors.yellow[100],
+          checkmarkColor: Colors.yellow,
+          shape: StadiumBorder(side: BorderSide(color: Colors.yellow[800]!)),
+          label: Text(
+            'Поторопись',
+            style: TextStyle(fontSize: 16, color: Colors.yellow[900]),
           ),
+          onSelected: (bool value) {
+            secondFilter.state = value;
+          },
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0),
-          child: FilterChip(
-            selected: thirdFilter.state,
-            backgroundColor: Colors.green[50],
-            selectedColor: Colors.green[100],
-            checkmarkColor: Colors.green,
-            label: Text(
-              'Время есть',
-              style: TextStyle(fontSize: 16, color: Colors.green[900]),
-            ),
-            onSelected: (bool value) {
-              thirdFilter.state = value;
-            },
+        FilterChip(
+          selected: thirdFilter.state,
+          backgroundColor: Colors.green[50],
+          selectedColor: Colors.green[100],
+          checkmarkColor: Colors.green,
+          shape: StadiumBorder(side: BorderSide(color: Colors.green[700]!)),
+          label: Text(
+            'Время есть',
+            style: TextStyle(fontSize: 16, color: Colors.green[900]),
           ),
+          onSelected: (bool value) {
+            thirdFilter.state = value;
+          },
         ),
       ],
     );

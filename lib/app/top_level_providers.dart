@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final userNameProvider = Provider((ref) => 'Алексей');
 
+final userCompleteIntroductionProvider = StateProvider((ref) => true);
+
 final bottomNavIndexProvider = StateProvider<int>((ref) {
   if (ref.watch(userCompleteIntroductionProvider).state)
     return TODO_PAGE;
@@ -31,4 +33,3 @@ final pageNameProvider = StateProvider<String?>((ref) {
   }
 });
 
-final userCompleteIntroductionProvider = StateProvider((ref) => false);
