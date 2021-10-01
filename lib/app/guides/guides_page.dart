@@ -4,8 +4,8 @@ import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ChatPage extends ConsumerWidget {
-  const ChatPage({Key? key}) : super(key: key);
+class GuidesPage extends ConsumerWidget {
+  const GuidesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, watch) {
@@ -15,7 +15,7 @@ class ChatPage extends ConsumerWidget {
       body: SafeArea(
         child: Container(
           child: Center(
-            child: Text('Привет, это чат'),
+            child: Text('Привет, это гайды'),
           ),
         ),
       ),

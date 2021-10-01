@@ -11,15 +11,12 @@ class IntroductionPage extends ConsumerWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Expanded(
-          child: Container(
-            child: Center(
-              child: Text('Привет, $userName'),
-            ),
+        child: Container(
+          child: Center(
+            child: Text('Привет, $userName'),
           ),
         ),
       ),
     );
-    ;
   }
 }
