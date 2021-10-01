@@ -1,3 +1,4 @@
+import 'package:e_legion_hackaton/app/todo/widgets/filter_chips.dart';
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
 import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
 import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
@@ -11,15 +12,12 @@ class TodoPage extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final userName = watch(userNameProvider);
 
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: Center(
-            child: Text('todo\ntodo\ntodo'),
-          ),
-        ),
+    return SafeArea(
+      child: Column(
+        children: [
+          Filters(),
+        ],
       ),
-
     );
   }
 }

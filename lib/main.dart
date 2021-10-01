@@ -4,7 +4,7 @@ import 'package:e_legion_hackaton/app/introduction/introduction_page.dart';
 import 'package:e_legion_hackaton/app/profile/profile_page.dart';
 import 'package:e_legion_hackaton/app/test/tests_page.dart';
 import 'package:e_legion_hackaton/app/todo/todo_page.dart';
-import 'package:e_legion_hackaton/constants/page_ids.dart';
+import 'package:e_legion_hackaton/constants/pages_ids.dart';
 import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
 import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -35,6 +36,7 @@ class MyNavigation extends ConsumerWidget {
   @override
   Widget build(BuildContext context, watch) {
     final bottomNavIndex = watch(bottomNavIndexProvider);
+    final appBarName = watch(pageNameProvider);
 
     Widget? _getBody() {
       switch (bottomNavIndex.state) {
@@ -57,6 +59,9 @@ class MyNavigation extends ConsumerWidget {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('${appBarName.state}'),
+      ),
       body: _getBody(),
       floatingActionButton: MyFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

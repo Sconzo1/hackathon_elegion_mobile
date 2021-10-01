@@ -1,5 +1,5 @@
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
-import 'package:e_legion_hackaton/constants/page_ids.dart';
+import 'package:e_legion_hackaton/constants/pages_ids.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

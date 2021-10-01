@@ -11,12 +11,10 @@ class ChatPage extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final userName = watch(userNameProvider);
 
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: Center(
-            child: Text('Привет, это чат'),
-          ),
+    return SafeArea(
+      child: Container(
+        child: Center(
+          child: Text('Привет, это чат'),
         ),
       ),
     );

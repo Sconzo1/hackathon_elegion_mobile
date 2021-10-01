@@ -9,12 +9,10 @@ class IntroductionPage extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final userName = watch(userNameProvider);
 
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: Center(
-            child: Text('Привет, $userName'),
-          ),
+    return SafeArea(
+      child: Container(
+        child: Center(
+          child: Text('Привет, это интро'),
         ),
       ),
     );

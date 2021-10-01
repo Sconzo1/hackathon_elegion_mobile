@@ -7,15 +7,12 @@ class TestsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          child: Center(
-            child: Text('Привет, это тесты'),
-          ),
+    return SafeArea(
+      child: Container(
+        child: Center(
+          child: Text('Привет, это тесты'),
         ),
       ),
-
     );
   }
 }

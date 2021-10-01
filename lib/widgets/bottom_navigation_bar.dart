@@ -9,10 +9,10 @@ class MyNavigationBar extends ConsumerWidget {
   }) : super(key: key);
 
   final iconsList = <IconData>[
-    Icons.add,
-    Icons.forward,
-    Icons.watch,
+    Icons.check_box,
     Icons.message,
+    Icons.help,
+    Icons.person,
   ];
 
   final iconsText = <String>[
