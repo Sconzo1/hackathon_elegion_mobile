@@ -1,4 +1,5 @@
 import 'package:e_legion_hackaton/app/guides/widgets/pdf_viewer.dart';
+import 'package:e_legion_hackaton/data/chapter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -53,14 +54,4 @@ class GuideChapter extends ConsumerWidget {
   }
 }
 
-
-class Chapter {
-  String topic;
-  String description;
-
-  Chapter({
-    required this.topic,
-    required this.description,
-  });
-}
 
