@@ -29,9 +29,6 @@ class GuideChapter extends ConsumerWidget {
       child: Column(
         children: [
           ListTile(
-            onTap: () => {
-              Navigator.push(context, MaterialPageRoute(builder: (_) => MyPdfViewer()))
-            },
             title: Text(
               grouped_chapters.key,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),

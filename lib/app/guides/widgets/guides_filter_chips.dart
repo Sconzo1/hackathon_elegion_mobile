@@ -20,6 +20,7 @@ class GuideFilters extends ConsumerWidget {
       child: Wrap(
         spacing: 16.0,
         runSpacing: 0.0,
+        alignment: WrapAlignment.center,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 0),

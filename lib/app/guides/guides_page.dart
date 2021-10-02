@@ -10,28 +10,22 @@ class GuidesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final chapters = [
-      Chapter(
-          topic: "Программирование",
-          description: "Выявить требования"),
-      Chapter(
-          topic: "Программирование",
-          description: "Добавить диаграмму ВИ"),
-      Chapter(
-          topic: "Верстка",
-          description: "Сверстать красивый лендинг"),
-      Chapter(
-          topic: "Верстка",
-          description: "Настроить фигму")
-    ];
-
     final chapterMap = chapters.groupBy((m) => m.topic);
 
     return SafeArea(
       child: ListView(
         children: [
-          GuideFilters(),
-          Divider(),
+          Padding(padding: EdgeInsets.only(top: 12, left: 12)),
+          Center(
+            child: Text(
+              'Фильтры:',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: GuideFilters(),
+          ),
           for (var entry in chapterMap.entries) GuideChapter(grouped_chapters: entry),
         ],
       ),
