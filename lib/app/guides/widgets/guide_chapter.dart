@@ -16,9 +16,6 @@ class GuideChapter extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            onTap: () => {
-              Navigator.push(context, MaterialPageRoute(builder: (_) => MyPdfViewer()))
-            },
             title: Text(
               grouped_chapters.key,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
@@ -27,9 +24,14 @@ class GuideChapter extends StatelessWidget {
           for (var subChapter in this.grouped_chapters.value)
             ListTile(
               onTap: () => {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => MyPdfViewer()))
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => MyPdfViewer(),
+                  ),
+                ),
               },
-              leading: Icon(Icons.document_scanner),
+              leading: Icon(Icons.picture_as_pdf_outlined, size: 32,),
               title: Text(subChapter.description),
             ),
         ],

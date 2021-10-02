@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.e_legion_hackaton">
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <queries>
         <!-- If your app opens https URLs -->
         <intent>
@@ -52,5 +54,6 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
     </application>
 </manifest>

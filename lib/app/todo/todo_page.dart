@@ -16,40 +16,41 @@ class TodoPage extends ConsumerWidget {
     final firstFilter = watch(firstFilterProvider);
     final secondFilter = watch(secondFilterProvider);
     final thirdFilter = watch(thirdFilterProvider);
-
-    List<Todo> getTodosList() {
-      var progressTodosList = <Todo>[];
-      var doneTodosList = <Todo>[];
-      for (var i = 0; i < todosList.length; i++) {
-        if (todosList[i].isDone) {
-          doneTodosList.add(todosList[i]);
-        } else {
-          progressTodosList.add(todosList[i]);
-        }
-      }
-      for (var i = 0; i < doneTodosList.length; i++) {
-        progressTodosList.add(doneTodosList[i]);
-      }
-      return progressTodosList;
-    }
+    final fourthFilter = watch(fourthFilterProvider);
 
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Filters(),
-          Divider(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: getTodosList().length,
-              itemBuilder: (context, index) {
-                if (getTodosList()[index].todoFilter == 1 && !firstFilter.state)
-                  return Container();
-                if (getTodosList()[index].todoFilter == 2 && !secondFilter.state)
-                  return Container();
-                if (getTodosList()[index].todoFilter == 3 && !thirdFilter.state)
-                  return Container();
-                return TodoListTile(todo: getTodosList()[index]);
-              },
+          Padding(padding: EdgeInsets.only(top: 12, left: 12)),
+          Center(
+            child: Text(
+              'Фильтры:',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Filters(),
+          ),
+          todosList.when(
+            loading: () => Center(child: CircularProgressIndicator()),
+            error: (error, st) => Center(child: Text('Error: $error')),
+            data: (data) => Expanded(
+              child: ListView.builder(
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  if (data[index].todoFilter == 1 && !firstFilter.state)
+                    return Container();
+                  if (data[index].todoFilter == 2 && !secondFilter.state)
+                    return Container();
+                  if (data[index].todoFilter == 3 && !thirdFilter.state)
+                    return Container();
+                  if (data[index].isDone && !fourthFilter.state)
+                    return Container();
+                  return TodoListTile(todo: data[index]);
+                },
+              ),
             ),
           ),
         ],

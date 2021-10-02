@@ -1,4 +1,5 @@
 import 'package:e_legion_hackaton/app/todo/widgets/todo_list_tile.dart';
+import 'package:e_legion_hackaton/data/todo.dart';
 
 final List<Todo> fakeTodos = [
   new Todo(id: 1, name: 'Пройти тест на знание компании', description: 'Пройти тест на знание компании Пройти тест на знание компании Пройти тест на знание компании', deadline: DateTime.now().add(Duration(days: 7)), isDone: false, todoWeight: 2, todoOwner: 'Елизавета, HR'),
