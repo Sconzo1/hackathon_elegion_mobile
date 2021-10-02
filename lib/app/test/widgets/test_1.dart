@@ -28,6 +28,8 @@ class _TestOneState extends State<TestOne> {
       child: Column(
         children: [
           _getQuestion('Вопрос $questionNum', ['a1', 'a2', 'a3', 'a4'], 2),
+          
+          _getQuestion('Вопрос $questionNum', ['a1', 'a2', 'a3', 'a4'], 2),
           OutlinedButton(
             onPressed: () {
               setState(() {

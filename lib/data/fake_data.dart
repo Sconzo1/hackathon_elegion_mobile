@@ -1,6 +1,6 @@
-import 'package:e_legion_hackaton/app/guides/widgets/guide_chapter.dart';
-import 'package:e_legion_hackaton/app/todo/widgets/todo_list_tile.dart';
+import 'package:e_legion_hackaton/data/questionPack.dart';
 import 'package:e_legion_hackaton/data/todo.dart';
+import 'chapter.dart';
 
 final List<Todo> fakeTodos = [
   new Todo(id: 1, name: 'Пройти тест на знание компании', description: 'Пройти тест на знание компании Пройти тест на знание компании Пройти тест на знание компании', deadline: DateTime.now().add(Duration(days: 7)), isDone: false, todoWeight: 2, todoOwner: 'Елизавета, HR'),
@@ -42,4 +42,61 @@ final chapters = [
   Chapter(
       topic: "Непрограммирование",
       description: "Правила запуска проекта")
+];
+
+
+
+final questionPacks = [
+  QuestionPack(
+      questionPackName: "Знание компании",
+      questions: [
+        Question(
+          questionText: "Когда родился наш директор?",
+          answers: [
+            "После дождичка в четверг",
+            "1000 лет до н.э.",
+            "1972 год 12 октября",
+            "Да кому это интересно?",
+          ],
+          rightAnswer: 3
+        ),
+        Question(
+            questionText: "Кто такой Игорь?",
+            answers: [
+              "Самый прокаченный легионер в офисе",
+              "Местный гуру Android разработки",
+              "Наш директор",
+              "Все и сразу",
+            ],
+            rightAnswer: 4
+        ),
+        Question(
+            questionText: "Что должно быть на рабочем столу?",
+            answers: [
+              "Снеки, ноутбук и кружка",
+              "Побежденный монстр",
+              "Щит, меч и смартфон",
+              "Меня самого хватит",
+            ],
+            rightAnswer: 4
+        )
+       ],
+      ),
+
+  QuestionPack(
+    questionPackName: "Методы командной разработки",
+    questions: [
+      Question(
+          questionText: "Какая из гибких методологий используется в наших проектах?",
+          answers: [
+            "Scrum",
+            "Waterfall",
+            "Кибаб",
+            "Без разницы",
+          ],
+          rightAnswer: 1
+      ),
+    ],
+  )
+  
 ];
