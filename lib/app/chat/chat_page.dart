@@ -1,4 +1,3 @@
-import 'package:e_legion_hackaton/app/test/widgets/tests_question_packs.dart';
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
 import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
 import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
@@ -15,9 +14,7 @@ class ChatPage extends ConsumerWidget {
     return SafeArea(
       child: Column(
         children: [
-          Expanded(child: TestQuestionPacks()),
-          Expanded(child: TestQuestionPacks()),
-          Expanded(child: TestQuestionPacks()),
+
         ],
       ),
     );

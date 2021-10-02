@@ -63,7 +63,7 @@ class Todo {
         }
       case 5:
         {
-          return 'ебать)';
+          return 'жесть';
         }
     }
   }

@@ -105,7 +105,7 @@ class TodoListTile extends StatelessWidget {
                       ),
                       (todo.isDone)
                           ? Text(
-                              '+${todo.todoWeight * 10} EXP',
+                              '+${todo.todoWeight * 25} EXP',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             )
                           : Text(
