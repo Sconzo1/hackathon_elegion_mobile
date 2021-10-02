@@ -9,7 +9,14 @@ class ProfilePage extends ConsumerWidget {
     return SafeArea(
       child: Column(
         children: [
-
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                
+              ],
+            ),
+          ),
         ],
       ),
     );

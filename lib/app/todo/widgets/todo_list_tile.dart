@@ -107,11 +107,11 @@ class Todo {
       todoFilter = -1;
     }
     else if (deadline.difference(DateTime.now()).inDays <= 2) {
-      todoFilter = 3;
+      todoFilter = 1;
     } else if (deadline.difference(DateTime.now()).inDays <= 4) {
       todoFilter = 2;
     } else {
-      todoFilter = 1;
+      todoFilter = 3;
     }
   }
 
