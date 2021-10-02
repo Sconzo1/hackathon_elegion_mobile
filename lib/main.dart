@@ -9,6 +9,7 @@ import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
 import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'app/top_level_providers.dart';
 
@@ -40,25 +41,66 @@ class MyNavigation extends ConsumerWidget {
 
     Widget? _getBody() {
       switch (bottomNavIndex.state) {
-        case TESTS_PAGE :
+        case TESTS_PAGE:
           {
             return TestsPage();
           }
-        case CHAT_PAGE :
+        case CHAT_PAGE:
           {
             return ChatPage();
           }
-        case GUIDES_PAGE :
+        case GUIDES_PAGE:
           {
             return GuidesPage();
           }
-        case PROFILE_PAGE :
+        case PROFILE_PAGE:
           {
             return ProfilePage();
           }
-        case TODO_PAGE :
+        case TODO_PAGE:
           {
             return TodoPage();
+          }
+      }
+    }
+
+    List<Widget>? _getAppBarActions() {
+      switch (bottomNavIndex.state) {
+        case TESTS_PAGE:
+          {
+            return <Widget>[];
+          }
+        case CHAT_PAGE:
+          {
+            return <Widget>[
+              IconButton(
+                onPressed: () async {
+                  String url = "https://telegram.me/";
+                  print("launchingUrl: $url");
+                  await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                },
+                icon: Icon(Icons.airplanemode_active_outlined),
+                iconSize: 28,
+              ),
+            ];
+          }
+        case GUIDES_PAGE:
+          {
+            return <Widget>[];
+          }
+        case PROFILE_PAGE:
+          {
+            return <Widget>[
+              IconButton(
+                  onPressed: () {
+                  },
+                  icon: Icon(Icons.edit),
+                  iconSize: 28),
+            ];
+          }
+        case TODO_PAGE:
+          {
+            return <Widget>[];
           }
       }
     }
@@ -69,6 +111,7 @@ class MyNavigation extends ConsumerWidget {
       return Scaffold(
         appBar: AppBar(
           title: Text('${appBarName.state}'),
+          actions: _getAppBarActions(),
         ),
         body: _getBody(),
         floatingActionButton: MyFloatingActionButton(),
@@ -77,4 +120,3 @@ class MyNavigation extends ConsumerWidget {
       );
   }
 }
-
