@@ -11,15 +11,39 @@ class GuidesPage extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final userName = watch(userNameProvider);
 
-    var children = [];
+    final chapters = [
+      Chapter(
+          topic: "Программирование",
+          description: "Выявить требования"),
+      Chapter(
+          topic: "Программирование",
+          description: "Добавить диаграмму ВИ"),
+      Chapter(
+          topic: "Верстка",
+          description: "Сверстать красивый лендинг"),
+      Chapter(
+          topic: "Верстка",
+          description: "Настроить фигму")
+    ];
+
+    final chapterMap = chapters.groupBy((m) => m.topic);
 
     return SafeArea(
       child: Column(
         children: [
           GuideFilters(),
-          Expanded(child: GuideChapter(title: "Программирование", chapters: ["Выявить требования", "Добавить диаграмму ВИ"]))
+          Divider(),
+          for (var entry in chapterMap.entries) GuideChapter(grouped_chapters: entry),
         ],
       ),
     );
   }
+}
+
+
+extension Iterables<E> on Iterable<E> {
+  Map<K, List<E>> groupBy<K>(K Function(E) keyFunction) => fold(
+      <K, List<E>>{},
+          (Map<K, List<E>> map, E element) =>
+      map..putIfAbsent(keyFunction(element), () => <E>[]).add(element));
 }
