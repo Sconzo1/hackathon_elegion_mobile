@@ -11,13 +11,28 @@ class GuidesPage extends ConsumerWidget {
   Widget build(BuildContext context, watch) {
     final userName = watch(userNameProvider);
 
-    var children = [];
+    final List<GuideChapter> guides = [
+      GuideChapter(
+          title: "Программирование",
+          chapters: ["Выявить требования", "Добавить диаграмму ВИ"]),
+      GuideChapter(
+          title: "Верстка",
+          chapters: ["Сверстать красивый лендинг", "настроить фигму"])
+    ];
 
     return SafeArea(
       child: Column(
         children: [
           GuideFilters(),
-          Expanded(child: GuideChapter(title: "Программирование", chapters: ["Выявить требования", "Добавить диаграмму ВИ"]))
+          Divider(),
+          Expanded(
+            child: ListView.builder(
+              itemCount: guides.length,
+              itemBuilder: (context, index) {
+                return guides[index];
+              },
+            ),
+          ),
         ],
       ),
     );

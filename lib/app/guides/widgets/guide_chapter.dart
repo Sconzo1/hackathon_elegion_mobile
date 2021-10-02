@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class GuideChapter extends ConsumerWidget {
+class GuideChapter extends StatelessWidget {
   String title;
   List<String> chapters;
 
@@ -17,12 +17,8 @@ class GuideChapter extends ConsumerWidget {
         .toList();
   }
 
-  // var children = [
-  //   Text("${this.title}", style: TextStyle(fontWeight: FontWeight.w400)),
-  // ];
-
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
