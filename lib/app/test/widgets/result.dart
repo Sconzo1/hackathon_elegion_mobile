@@ -30,7 +30,7 @@ class TestResult extends ConsumerWidget {
       await http.patch(
         Uri.parse(url),
         body: {
-          "is_done": true,
+          "is_done": 'true',
         },
       );
 

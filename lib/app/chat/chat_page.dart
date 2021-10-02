@@ -11,30 +11,30 @@ class ChatPage extends ConsumerWidget {
     return SafeArea(
       child: Column(
         children: [
-          Expanded(child: TelegramChatRooms(
+          TelegramChatRooms(
             title: "Работа",
             chatNames: ["Мой офис", "Большой Босс"],
             chatLinks: [
               "https://t.me/leadersofdigital",
               "https://telegram.me/ryavorsky"
             ],
-          )),
-          Expanded(child: TelegramChatRooms(
+          ),
+          TelegramChatRooms(
             title: "Развлечения",
             chatNames: ["Антон Автомойка", "Качалка"],
             chatLinks: [
               "https://telegram.me/aiekseu",
-              "https://telegram.me/M0n0Bot"
+              "https://telegram.me/aiekseu"
             ],
-          )),
-          Expanded(child: TelegramChatRooms(
+          ),
+          TelegramChatRooms(
             title: "Учеба",
             chatNames: ["личные Финансы", "Уроки релаксации"],
             chatLinks: [
               "https://telegram.me/M0n0Bot",
-              "https://telegram.me/M0n0Bot"
+              "https://telegram.me/aiekseu"
             ],
-          )),
+          ),
         ],
       ),
     );

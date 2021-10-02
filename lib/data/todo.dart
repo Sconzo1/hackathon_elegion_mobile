@@ -47,19 +47,19 @@ class Todo {
     switch (todoWeight) {
       case 1:
         {
-          return 'Легко';
+          return 'изи';
         }
       case 2:
         {
-          return 'Нормально';
+          return 'норм';
         }
       case 3:
         {
-          return 'Сложно';
+          return 'окей';
         }
       case 4:
         {
-          return 'Оч. сложно';
+          return 'хард';
         }
       case 5:
         {

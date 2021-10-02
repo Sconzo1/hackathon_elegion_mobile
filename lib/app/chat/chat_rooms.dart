@@ -43,7 +43,7 @@ class TelegramChatRooms extends ConsumerWidget {
               leading: Icon(Icons.send),
               title: Text(this.chatNames[1]),
               onTap: () async {
-                String url = this.chatNames[1];
+                String url = this.chatLinks[1];
                 print("launchingUrl: $url");
                 await canLaunch(url)
                     ? await launch(url)

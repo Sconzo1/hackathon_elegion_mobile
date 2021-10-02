@@ -38,7 +38,9 @@ class TodoListTile extends StatelessWidget {
                               fontWeight: todo.isDone
                                   ? FontWeight.w200
                                   : FontWeight.normal),
-                          maxLines: 2,
+                          maxLines: 1,
+                          minFontSize: 16,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       Expanded(
@@ -99,10 +101,28 @@ class TodoListTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       //todo.isDone ? Text('*труп*') : Text('монстр'),
-                      Image.asset(
-                        'assets/monster_lvl${todo.todoWeight}.png',
-                        scale: 0.85,
-                      ),
+                      !todo.isDone
+                          ? Image.asset(
+                              'assets/monster_lvl${todo.todoWeight}.png',
+                              scale: 0.85,
+                            )
+                          : ShaderMask(
+                              shaderCallback: (Rect bounds) {
+                                return RadialGradient(
+                                  center: Alignment.center,
+                                  radius: 0.9,
+                                  colors: <Color>[
+                                    Colors.white12,
+                                    Colors.black26
+                                  ],
+                                  tileMode: TileMode.mirror,
+                                ).createShader(bounds);
+                              },
+                              child: Image.asset(
+                                'assets/monster_lvl${todo.todoWeight}.png',
+                                scale: 0.85,
+                              ),
+                            ),
                       (todo.isDone)
                           ? Text(
                               '+${todo.todoWeight * 25} EXP',

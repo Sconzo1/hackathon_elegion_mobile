@@ -1,9 +1,7 @@
 import 'package:e_legion_hackaton/app/guides/widgets/guide_chapter.dart';
 import 'package:e_legion_hackaton/app/guides/widgets/guides_filter_chips.dart';
-import 'package:e_legion_hackaton/app/top_level_providers.dart';
 import 'package:e_legion_hackaton/data/fake_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class GuidesPage extends StatelessWidget {
   const GuidesPage({Key? key}) : super(key: key);
