@@ -1,6 +1,8 @@
+import 'package:e_legion_hackaton/app/guides/guides_providers.dart';
 import 'package:e_legion_hackaton/app/guides/widgets/guide_chapter.dart';
 import 'package:e_legion_hackaton/app/guides/widgets/guides_filter_chips.dart';
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
+import 'package:e_legion_hackaton/data/fake_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,22 +11,11 @@ class GuidesPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, watch) {
-    final userName = watch(userNameProvider);
+    final firstGuideFilter = watch(firstGuideFilterProvider);
+    final secondGuideFilter = watch(secondGuideFilterProvider);
+    final thirdGuideFilter = watch(thirdGuideFilterProvider);
+    final fourthGuideFilter = watch(fourthGuideFilterProvider);
 
-    final chapters = [
-      Chapter(
-          topic: "Программирование",
-          description: "Выявить требования"),
-      Chapter(
-          topic: "Программирование",
-          description: "Добавить диаграмму ВИ"),
-      Chapter(
-          topic: "Верстка",
-          description: "Сверстать красивый лендинг"),
-      Chapter(
-          topic: "Верстка",
-          description: "Настроить фигму")
-    ];
 
     final chapterMap = chapters.groupBy((m) => m.topic);
 

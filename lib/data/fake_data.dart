@@ -1,3 +1,4 @@
+import 'package:e_legion_hackaton/app/guides/widgets/guide_chapter.dart';
 import 'package:e_legion_hackaton/app/todo/widgets/todo_list_tile.dart';
 
 final List<Todo> fakeTodos = [
@@ -7,4 +8,19 @@ final List<Todo> fakeTodos = [
   new Todo(id: 1, name: 'Созвониться с HR', description: 'Пройти тест на знание компании Пройти тест на знание компании Пройти тест на знание компании', deadline: DateTime.now().subtract(Duration(days: 1)), isDone: true, todoWeight: 5, todoOwner: 'Елизавета, HR'),
   new Todo(id: 1, name: 'Прочитать гайды', description: 'Пройти тест на знание компании Пройти тест на знание компании Пройти тест на знание компании', deadline: DateTime.now().subtract(Duration(days: 1)), isDone: true, todoWeight: 1, todoOwner: 'Елизавета, HR'),
   new Todo(id: 1, name: 'Поздороваться с командой в чате', description: 'Пройти тест на знание компании Пройти тест на знание компании Пройти тест на знание компании', deadline: DateTime.now().add(Duration(days: 10)), isDone: false, todoWeight: 2, todoOwner: 'Елизавета, HR'),
+];
+
+final chapters = [
+  Chapter(
+      topic: "Программирование",
+      description: "Выявить требования"),
+  Chapter(
+      topic: "Программирование",
+      description: "Добавить диаграмму ВИ"),
+  Chapter(
+      topic: "Верстка",
+      description: "Сверстать красивый лендинг"),
+  Chapter(
+      topic: "Верстка",
+      description: "Настроить фигму")
 ];

@@ -29,7 +29,7 @@ class GuideChapter extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => MyPdfViewer()))
               },
-              leading: Icon(Icons.document_scanner),
+              leading: Icon(Icons.picture_as_pdf_outlined),
               title: Text(subChapter.description),
             ),
         ],
@@ -48,17 +48,3 @@ class Chapter {
   });
 }
 
-// Expanded(
-//   child: ListView.builder(
-//     padding: const EdgeInsets.all(0.0),
-//     itemCount: this.chapter.subChapters.length,
-//     itemBuilder: (context, index) {
-//       // return header
-//       if (index == 0){
-//         return ListTile(title: Text(chapter.topic, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400)));
-//       }
-//       index -=1;
-//       return ListTile(leading: Icon(Icons.document_scanner), title: Text(this.chapter.subChapters[index]));
-//     },
-//   ),
-// ),
