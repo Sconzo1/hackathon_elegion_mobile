@@ -109,10 +109,10 @@ class MyNavigation extends ConsumerWidget {
       return IntroductionPage();
     else
       return Scaffold(
-        appBar: AppBar(
-          title: Text('${appBarName.state}'),
-          actions: _getAppBarActions(),
-        ),
+        // appBar: AppBar(
+        //   title: Text('${appBarName.state}'),
+        //   actions: _getAppBarActions(),
+        // ),
         body: _getBody(),
         floatingActionButton: MyFloatingActionButton(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
