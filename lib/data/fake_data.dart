@@ -13,14 +13,32 @@ final List<Todo> fakeTodos = [
 final chapters = [
   Chapter(
       topic: "Программирование",
-      description: "Выявить требования"),
+      description: "Документация Android для разработчиков"),
   Chapter(
       topic: "Программирование",
-      description: "Добавить диаграмму ВИ"),
+      description: "Изображения для приложения"),
   Chapter(
-      topic: "Верстка",
+      topic: "Программирование",
+      description: "Организация работы с Git"),
+  Chapter(
+      topic: "Программирование",
+      description: "Верстка"),
+  Chapter(
+      topic: "Статьи",
       description: "Сверстать красивый лендинг"),
   Chapter(
-      topic: "Верстка",
-      description: "Настроить фигму")
+      topic: "How Tobe",
+      description: "Как быть программистом"),
+  Chapter(
+      topic: "How Tobe",
+      description: "Как быть дизайнером"),
+  Chapter(
+      topic: "Непрограммирование",
+      description: "Запуск приложения"),
+  Chapter(
+      topic: "Непрограммирование",
+      description: "Правила обращения в чатах"),
+  Chapter(
+      topic: "Непрограммирование",
+      description: "Правила запуска проекта")
 ];

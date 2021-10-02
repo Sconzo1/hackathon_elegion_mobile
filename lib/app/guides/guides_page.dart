@@ -11,16 +11,10 @@ class GuidesPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, watch) {
-    final firstGuideFilter = watch(firstGuideFilterProvider);
-    final secondGuideFilter = watch(secondGuideFilterProvider);
-    final thirdGuideFilter = watch(thirdGuideFilterProvider);
-    final fourthGuideFilter = watch(fourthGuideFilterProvider);
-
-
     final chapterMap = chapters.groupBy((m) => m.topic);
 
     return SafeArea(
-      child: Column(
+      child: ListView(
         children: [
           GuideFilters(),
           Divider(),
