@@ -48,7 +48,7 @@ class ProfilePage extends ConsumerWidget {
               children: [
                 Expanded(
                   flex: 8,
-                  child: LegionerPhoto(),
+                  child: LegionnairePhoto(),
                 ),
                 Spacer(),
                 Expanded(

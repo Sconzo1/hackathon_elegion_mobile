@@ -1,15 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../profile_providers.dart';
 
-class LegionerPhoto extends ConsumerWidget {
-  const LegionerPhoto({Key? key}) : super(key: key);
+class LegionnairePhoto extends ConsumerWidget {
+  const LegionnairePhoto({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, watch) {
     final userExp = watch(userExpProvider);
     final userLvlProgress = watch(userLvlProgressProvider);
+    final userLvl = watch(userLvlProvider);
+    final padValue = watch(animatedPaddingValueProvider);
+
+    // Timer.periodic(Duration(seconds: 4), (timer) {
+    //   padValue.state = (padValue.state == 15.0) ? 0.0 : 15.0;
+    //   print('state: ${padValue.state}');
+    // });
 
     void _showDialog() {
       showGeneralDialog(
@@ -23,19 +32,32 @@ class LegionerPhoto extends ConsumerWidget {
             alignment: Alignment.center,
             child: Container(
               height: 500,
-              child: SizedBox.expand(child: FlutterLogo()),
-              margin: EdgeInsets.only(bottom: 50, left: 12, right: 12),
+              child: Padding(
+                padding: EdgeInsets.only(top: 90, left: 70, right: 70),
+                child: FittedBox(
+                  child: Image.asset(
+                    'assets/lvl_${userLvl.state}.png',
+                  ),
+                  //fit: BoxFit.fitWidth,
+                ),
+              ),
+              margin: EdgeInsets.only(bottom: 40, left: 12, right: 12),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(40),
+                image: DecorationImage(
+                  fit: BoxFit.fitHeight,
+                  image: AssetImage(
+                      'assets/bg.png'),
+                ),
               ),
             ),
           );
         },
         transitionBuilder: (_, anim, __, child) {
           return FadeTransition(
-            //position: Tween(begin: Offset(0, 1), end: Offset(0, 0)).animate(anim),
-            opacity: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: anim, curve: Curves.easeInOutBack)),
+            opacity: Tween(begin: 0.0, end: 1.0).animate(
+                CurvedAnimation(parent: anim, curve: Curves.easeInOutBack)),
             child: child,
           );
         },
@@ -51,8 +73,15 @@ class LegionerPhoto extends ConsumerWidget {
             child: Container(
               height: 160,
               decoration: BoxDecoration(
-                color: Colors.red,
+                // color: Colors.red,
                 borderRadius: BorderRadius.circular(10),
+              ),
+              child: FittedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Image.asset('assets/lvl_${userLvl.state}.png'),
+                ),
+                fit: BoxFit.fitWidth,
               ),
             ),
           ),
@@ -69,7 +98,10 @@ class LegionerPhoto extends ConsumerWidget {
               ),
             ),
           ),
-          Text('${userExp.state} XP', style: TextStyle(fontSize: 16),)
+          Text(
+            '${userExp.state} XP',
+            style: TextStyle(fontSize: 16),
+          )
         ],
       ),
     );

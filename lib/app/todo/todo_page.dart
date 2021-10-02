@@ -1,7 +1,9 @@
+import 'package:e_legion_hackaton/app/profile/profile_providers.dart';
 import 'package:e_legion_hackaton/app/todo/todo_providers.dart';
 import 'package:e_legion_hackaton/app/todo/widgets/filter_chips.dart';
 import 'package:e_legion_hackaton/app/todo/widgets/todo_list_tile.dart';
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
+import 'package:e_legion_hackaton/data/todo.dart';
 import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
 import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
 import 'package:flutter/material.dart';
@@ -40,13 +42,13 @@ class TodoPage extends ConsumerWidget {
               child: ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-                  if (data[index].todoFilter == 1 && !firstFilter.state)
+                  if (data[index].todoFilter == 1 && !firstFilter.state) // срочные (меньше 3 дней)
                     return Container();
-                  if (data[index].todoFilter == 2 && !secondFilter.state)
+                  if (data[index].todoFilter == 2 && !secondFilter.state) // redmine
                     return Container();
-                  if (data[index].todoFilter == 3 && !thirdFilter.state)
+                  if (data[index].todoFilter == 3 && !thirdFilter.state) // не срочные
                     return Container();
-                  if (data[index].isDone && !fourthFilter.state)
+                  if (data[index].todoFilter == -1 && !fourthFilter.state)  // выполненные
                     return Container();
                   return TodoListTile(todo: data[index]);
                 },
