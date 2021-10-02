@@ -2,13 +2,13 @@ import 'package:e_legion_hackaton/app/todo/todo_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final userExpProvider = StateProvider<int>((ref) {
-  // final todos = ref.watch(todosListProvider);
-  // var exp = 0;
-  // for (var todo in todos.data!.value) {
-  //   if (todo.isDone)
-  //     exp += todo.todoWeight * 25; // ВЕС ЗАДАЧИ В ОПЫТ
-  // }
-  return 550;
+  final todos = ref.watch(todosListProvider);
+  var exp = 0;
+  for (var todo in todos.data!.value) {
+    if (todo.isDone)
+      exp += todo.todoWeight * 25; // ВЕС ЗАДАЧИ В ОПЫТ
+  }
+  return exp;
 });
 
 final userLvlProvider = StateProvider<int>((ref) {
