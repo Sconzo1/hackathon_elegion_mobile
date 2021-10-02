@@ -1,4 +1,3 @@
-import 'package:e_legion_hackaton/app/test/widgets/test_1.dart';
 import 'package:e_legion_hackaton/app/test/test_providers.dart';
 import 'package:e_legion_hackaton/app/test/widgets/test_interrogation.dart';
 import 'package:e_legion_hackaton/app/test/widgets/tests_question_packs.dart';
@@ -11,27 +10,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class TestsPage extends ConsumerWidget {
   const TestsPage({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context, watch) {
     final questionPack = watch(questionPackProvider);
     final questionPackChosen = watch(questionPackChosenProvider);
 
-    Widget _getWidget(){
-      if (! questionPackChosen.state){
-        return TestQuestionPacks();
-      } else {
-            return TestInterrogation();
-      }
-    }
-
     return SafeArea(
-      child: _getWidget()
+      child: questionPackChosen.state
+          ? NewTestInterrogation(
+              questionPack: questionPack.state,
+              isQuestionPackChosen: questionPackChosen.state)
+          : TestQuestionPacks(),
     );
   }
 }
-
-
 
 //Padding(
 //         padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24),

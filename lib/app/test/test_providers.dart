@@ -5,3 +5,4 @@ final questionPackProvider = StateProvider((ref) => questionPacks[0]);
 final questionPackChosenProvider = StateProvider((ref) => false);
 final questionCheckboxListTileProvider = StateProvider((ref) => false);
 
+final answersCheckboxesProvider = StateProvider<List<bool>>((ref) => List.filled(4, false));

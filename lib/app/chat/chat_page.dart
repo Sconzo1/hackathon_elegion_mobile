@@ -1,3 +1,4 @@
+import 'package:e_legion_hackaton/app/test/widgets/tests_question_packs.dart';
 import 'package:e_legion_hackaton/app/top_level_providers.dart';
 import 'package:e_legion_hackaton/widgets/bottom_navigation_bar.dart';
 import 'package:e_legion_hackaton/widgets/floating_action_button.dart';
@@ -12,10 +13,12 @@ class ChatPage extends ConsumerWidget {
     final userName = watch(userNameProvider);
 
     return SafeArea(
-      child: Container(
-        child: Center(
-          child: Text('Привет, это чат'),
-        ),
+      child: Column(
+        children: [
+          Expanded(child: TestQuestionPacks()),
+          Expanded(child: TestQuestionPacks()),
+          Expanded(child: TestQuestionPacks()),
+        ],
       ),
     );
   }
